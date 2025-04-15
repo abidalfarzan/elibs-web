@@ -12,10 +12,24 @@ class HallController extends Controller
 {
     //
     public function index(){
-        $title = "hall";
-        $books = Book::with(['author', 'category'])->paginate(10);
+        $title = '';
 
-        // return dd($books);
+        if (request('category')) {
+            $category = Category::firstWhere('slug', request('category'));
+            $title = 'of' . $category->name;
+        }
+
+        if (request('author')) {
+            $author = Author::firstWhere('slug', request('author'));
+            $title = 'of' . $author->name;
+        }
+
+        // if (request('search')) {
+        //     $books = Book::where('name', 'like', '%' . request('search') . '%')->with(['author', 'category']);
+        // }
+
+        $title="Hall of" . $title;
+        $books = Book::latest()->filter(request(['search', 'category', 'author']))->paginate(10)->withQueryString();
 
         return view('hall', compact('title', 'books'));
     }
