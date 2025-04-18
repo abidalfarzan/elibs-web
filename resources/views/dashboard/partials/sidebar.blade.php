@@ -7,9 +7,17 @@
     <ul class="mt-4">
         <span class="text-gray-400 font-bold">ADMIN</span>
         <li class="mb-1 group">
-            <a href="/dashboard" class="{{ request()->is('dashboard') ? 'bg-gray-800 text-white' : '' }} flex font-semibold items-center py-2 px-4 text-gray-900 hover:bg-gray-950 hover:text-gray-100 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-gray-950 group-[.selected]:text-gray-100"">
+            <a href="/dashboard" class="{{ request()->is('dashboard') ? 'bg-gray-800 text-white' : '' }} flex font-semibold items-center py-2 px-4 text-gray-900 hover:bg-gray-950 hover:text-gray-100 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-gray-950 group-[.selected]:text-gray-100 mb-2">
                 <i class="ri-home-2-line mr-3 text-lg"></i>
                 <span class="text-sm">Dashboard</span>
+            </a>
+            <a href="/dashboard/category" class="{{ request()->is('dashboard/category*') ? 'bg-gray-800 text-white' : '' }} flex font-semibold items-center py-2 px-4 text-gray-900 hover:bg-gray-950 hover:text-gray-100 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-gray-950 group-[.selected]:text-gray-100 mb-2">
+                <i class="ri-home-2-line mr-3 text-lg"></i>
+                <span class="text-sm">Category</span>
+            </a>
+            <a href="/dashboard/author" class="{{ request()->is('dashboard/author*') ? 'bg-gray-800 text-white' : '' }} flex font-semibold items-center py-2 px-4 text-gray-900 hover:bg-gray-950 hover:text-gray-100 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-gray-950 group-[.selected]:text-gray-100">
+                <i class="ri-home-2-line mr-3 text-lg"></i>
+                <span class="text-sm">Author</span>
             </a>
         </li>
         {{-- <span class="text-gray-400 font-bold">PERSONAL</span>
