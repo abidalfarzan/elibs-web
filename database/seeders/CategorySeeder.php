@@ -13,25 +13,23 @@ class CategorySeeder extends Seeder
      */
     public function run(): void
     {
-        //
         DB::table('categories')->insert([
             [
+                'name' => 'Comic',
+                'slug' => 'comic',
+            ],
+            [
                 'name' => 'Novel',
-                'slug' => 'novel'
+                'slug' => 'novel',
             ],
             [
                 'name' => 'Biografi',
-                'slug' => 'biografi'
+                'slug' => 'biografi',
             ],
             [
-                'name' => 'Comic',
-                'slug' => 'comic'
-            ],
-            [
-                'name' => 'Recipes',
-                'slug' => 'recipes'
+                'name' => 'Ensiklopedia',
+                'slug' => 'ensiklopedia',
             ]
         ]);
     }
-
 }

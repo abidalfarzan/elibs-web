@@ -4,8 +4,8 @@
 <div class="grid grid-cols-12 gap-4">
   <div class="col-span-12 lg:col-span-9 p-4">
     <div class="bg-white p-6 rounded-lg shadow">
-      <h2 class="text-2xl font-semibold text-gray-800 mb-6">Category Form</h2>
-      <form action="/dashboard/category" method="POST" class="space-y-6">
+      <h2 class="text-2xl font-semibold text-gray-800 mb-6">Add User Form</h2>
+      <form action="/dashboard/user" method="POST" class="space-y-6">
         @csrf
         <!-- Name Field -->
         <div>
@@ -22,6 +22,37 @@
           <input type="text" name="slug" id="slug" value="{{ old('slug') }}" required
             class="mt-1 p-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm @error('slug') border-red-500 @enderror">
           @error('slug')
+            <p class="mt-1 text-sm text-red-500">{{ $message }}</p>
+          @enderror
+        </div>
+        <!-- email Field -->
+        <div>
+            <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+            <input type="email" name="email" id="email" value="{{ old('email') }}" required
+              class="mt-1 p-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm @error('email') border-red-500 @enderror">
+            @error('email')
+              <p class="mt-1 text-sm text-red-500">{{ $message }}</p>
+            @enderror
+        </div>
+        <!-- Role Select Field -->
+        <div>
+            <label for="role" class="block text-sm font-medium text-gray-700">Role</label>
+            <select name="role" id="role" required
+            class="p-2 mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                <option value=""></option>
+                <option value="admin" @selected(old('role') == 'admin')>Admin</option>
+                <option value="user" @selected(old('role') == 'user')>User</option>
+            </select>
+            @error('role')
+            <p class="mt-1 text-sm text-red-500">{{ $message }}</p>
+            @enderror
+        </div>
+        <!-- password Field -->
+        <div>
+          <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+          <input type="password" name="password" id="password" value="{{ old('password') }}" required
+            class="mt-1 p-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm @error('password') border-red-500 @enderror">
+          @error('password')
             <p class="mt-1 text-sm text-red-500">{{ $message }}</p>
           @enderror
         </div>

@@ -4,8 +4,8 @@
 <div class="grid grid-cols-12 gap-4">
   <div class="col-span-12 lg:col-span-9 p-4">
     <div class="bg-white p-6 rounded-lg shadow">
-      <h2 class="text-2xl font-semibold text-gray-800 mb-6">Category Form</h2>
-      <form action="/dashboard/category" method="POST" class="space-y-6">
+      <h2 class="text-2xl font-semibold text-gray-800 mb-6">Add Author Form</h2>
+      <form action="/dashboard/author" method="POST" class="space-y-6">
         @csrf
         <!-- Name Field -->
         <div>

@@ -19,14 +19,12 @@ class BookFactory extends Factory
      */
     public function definition(): array
     {
-        $name = fake()->sentence(3);
-
+        $name = $this->faker->sentence(3);
         return [
-            //
             'name' => $name,
             'slug' => Str::slug($name),
-            'body' => $this->faker->paragraphs(3, true),
-            'published_at' => $this->faker->optional()->dateTimeBetween('-5 years', 'now'),
+            'body' => $this->faker->paragraphs(4, true),
+            'published_at' => $this->faker->boolean(80) ? $this->faker->dateTimeBetween('-5 years', 'now') : null,
             'category_id' => Category::inRandomOrder()->first()->id ?? Category::factory(),
             'author_id' => Author::inRandomOrder()->first()->id ?? Author::factory(),
         ];

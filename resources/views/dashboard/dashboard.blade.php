@@ -1,7 +1,4 @@
-@extends('dashboard.layout.main')
-
+@extends('dashboard.layouts.main')
 @section('content')
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
-        Ini Dashboard
-    </div>
+    <p>Halo {{ auth()->user()->name }}, Selamat datang di halaman dashboard.</p>
 @endsection
