@@ -39,7 +39,7 @@
                                     Pinjam Buku
                             </a>
                         @else
-                            <form action="/borrow" method="POST">
+                            <form action="/borrow/{{ $book->slug }}" method="POST">
                                 @csrf
                                 <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
                                 <input type="hidden" name="book_id" value="{{ $book->id }}">

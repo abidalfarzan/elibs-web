@@ -123,4 +123,5 @@ class BookController extends Controller
 
         return redirect('/dashboard/book')->with('success', "Book deleted successfully!!");
     }
+
 }
